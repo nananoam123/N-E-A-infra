@@ -16,9 +16,9 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 CMD ["bash"]
 MAINTAINER ilarionb@gmail.com
-WORKDIR /usr/local/tomcat/webapps
+WORKDIR /opt/tomcat/.jenkins/workspace/hello-world-war_master/target/
 
-COPY hello-world-war-1.0.0.war /tmp/hello-world-war.war
+COPY target/hello-world-war-1.0.0.war  /tmp/hello-world-war.war
 RUN cp /tmp/hello-world-war.war /usr/local/tomcat/webapps/hello-world-war.war
 
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
